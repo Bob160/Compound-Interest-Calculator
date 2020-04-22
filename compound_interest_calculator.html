@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+</head>
+<style>
+    body {
+        box-sizing: border-box;
+        background-color: white;
+        background-size: cover;
+        height: auto;
+        width: auto;
+        position: relative;
+    }
+
+    .main {
+        box-sizing: border-box;
+        background-color: whitesmoke;
+        color: teal;
+        outline: transparent;
+        max-width: 250px;
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: 50px;
+        position: absolute;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 4px 10px;
+    }
+
+    h4 {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: large;
+        text-align: center;
+        padding-right: 20px;
+    }
+
+    input {
+        height: 23px;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+
+    button {
+        color: teal;
+        background-color: powderblue;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    button:hover {
+        color: powderblue;
+        background-color: teal;
+    }
+</style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="name">
+            <p>
+                <h4>COMPOUND INTEREST CALCULATOR</h4>
+            </p>
+        </div>
+        <div class="principal">
+            <br>
+            <P><b>Principal (Amount):</b></P>
+            <input type="number" id="principal" required>
+            <br>
+        </div>
+        <div class="interest">
+            <br>
+            <p><b>Interest Rate (%):</b></p>
+            <input type="number" id="interest_rate" required>
+            <br>
+        </div>
+
+        <div class="tenure">
+            <br>
+            <p><b>Time (Loan tenure in months):</b></p>
+            <input type="number" id="time" required>
+            <br>
+
+        </div>
+        <div class="calculate">
+            <br>
+            <button onclick="calc();">Calculate</button>
+            <p><b>Compound Interest:</b></p>
+            <input type="" id="input_result">
+            
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function calc() {
+            var fix = 12;
+            var principal = Number(document.getElementById('principal').value);
+            var interest_rate = Number(document.getElementById('interest_rate').value);
+            var time = Number(document.getElementById('time').value);
+
+            if (principal >= 1 && interest_rate > 0 && time > 0); {
+
+                var time = (time / fix); // Convert to years
+                compound_interest = principal * Math.pow((1 + interest_rate / 100), time);
+                document.getElementById('input_result').value = compound_interest;
+
+
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
